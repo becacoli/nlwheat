@@ -22,53 +22,58 @@
           </span>
           <img src="images/foto.jpg" alt="Foto pessoal" />
         </div>
-        <h1>Rebeca Coli</h1>
-        <a href="https://github.com/becacoli">
+        <h1 id="userName">Rebeca Coli</h1>
+        <a href="https://github.com/becacoli" target="_blank">
           <img src="images/github.svg" alt="ícone github" />
           becacoli</a
         >
 
         <p>Apenas uma gostosa aprendendo a programar.</p>
 
-        <ul>
-          <li>
-            <a href="https://www.youtube.com/channel/UC-PX4KYBXSQEyU_9AOkTY6w">
-              <img
-                src="images/youtube.svg"
-                alt="ícone do youtube"
-                target="_blank"
-              />
+        <ul id="socialLinks">
+          <li class="youtube">
+            <a
+              href="https://www.youtube.com/channel/UC-PX4KYBXSQEyU_9AOkTY6w"
+              target="_blank"
+            >
+              <img src="images/youtube.svg" alt="ícone do youtube" />
             </a>
           </li>
-          <li>
-            <a href="https://instagram.com/becacoli">
-              <img
-                src="images/instagram.svg"
-                alt="ícone do instagram"
-                target="_blank"
-              />
+          <li class="instagram">
+            <a href="https://instagram.com/becacoli" target="_blank">
+              <img src="images/instagram.svg" alt="ícone do instagram" />
             </a>
           </li>
-          <li>
-            <a href="https://www.facebook.com/becacoli/">
-              <img
-                src="images/facebook.svg"
-                alt="ícone do facebook"
-                target="_blank"
-              />
+          <li class="facebook">
+            <a href="https://www.facebook.com/becacoli/" target="_blank">
+              <img src="images/facebook.svg" alt="ícone do facebook" />
             </a>
           </li>
-          <li>
-            <a href="https://www.twitter.com/becacoli">
-              <img
-                src="images/twitter.svg"
-                alt="ícone do twitter"
-                target="_blank"
-              />
+          <li class="twitter">
+            <a href="https://www.twitter.com/becacoli" target="_blank">
+              <img src="images/twitter.svg" alt="ícone do twitter" />
             </a>
           </li>
         </ul>
       </div>
     </main>
+    <script>
+      const LinksSocialMedia = {
+        github: 'becacoli',
+        youtube: 'maykbrito',
+        facebook: 'becacoli',
+        instagram: 'becacoli',
+        twitter: 'becacoli'
+      }
+
+      function changeSocialMediaLinks() {
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+
+          li.children[0].href = `https://${social}.com/${LinksSocialMedia[social]}`
+        }
+      }
+      changeSocialMediaLinks()
+    </script>
   </body>
 </html>
